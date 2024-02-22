@@ -8,13 +8,14 @@ const IssueForm = () => {
   const [location, setLocation] = useState('');
   const [waterOrSanitation, setWaterOrSanitation] = useState('');
   const [status, setStatus] = useState('');
+  const [remark, setRemark] = useState('');
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     // Perform validation if needed
-    // Submit the form data (issueName, issueDescription, location, waterOrSanitation, status) to your backend or perform any other action
-    console.log('Form submitted:', { issueName, issueDescription, location, waterOrSanitation, status });
+    // Submit the form data (issueName, issueDescription, location, waterOrSanitation, status, remark) to your backend or perform any other action
+    console.log('Form submitted:', { issueName, issueDescription, location, waterOrSanitation, status, remark });
     // You can add further logic here such as displaying a success message
 
     // Navigate back to the home page
@@ -32,8 +33,7 @@ const IssueForm = () => {
           margin="normal"
           value={issueName}
           onChange={(e) => setIssueName(e.target.value)}
-          InputProps={{ sx: { color: 'white' } }}
-          InputLabelProps={{ sx: { color: 'white' } }}
+          disabled
         />
         <TextField
           label="Issue Description"
@@ -44,8 +44,7 @@ const IssueForm = () => {
           rows={4}
           value={issueDescription}
           onChange={(e) => setIssueDescription(e.target.value)}
-          InputProps={{ sx: { color: 'white' } }}
-          InputLabelProps={{ sx: { color: 'white' } }}
+          disabled
         />
         <TextField
           label="Location"
@@ -54,16 +53,16 @@ const IssueForm = () => {
           margin="normal"
           value={location}
           onChange={(e) => setLocation(e.target.value)}
-          InputProps={{ sx: { color: 'white' } }}
-          InputLabelProps={{ sx: { color: 'white' } }}
+          disabled
         />
         <FormControl variant="outlined" fullWidth margin="normal">
-          <InputLabel sx={{ color: 'white' }}>Water or Sanitation</InputLabel>
+          <InputLabel sx={{ color: 'black' }}>Water or Sanitation</InputLabel>
           <Select
             value={waterOrSanitation}
             onChange={(e) => setWaterOrSanitation(e.target.value)}
             label="Water or Sanitation"
             sx={{ color: 'white' }}
+            disabled
           >
             <MenuItem value="">Select</MenuItem>
             <MenuItem value="water">Water</MenuItem>
@@ -84,6 +83,20 @@ const IssueForm = () => {
             <MenuItem value="closed">Closed</MenuItem>
           </Select>
         </FormControl>
+        <TextField
+          label="Remark"
+          variant="outlined"
+          fullWidth
+          margin="normal"
+          placeholder="Enter remark"
+          InputLabelProps={{ sx: { color: 'white' } }}
+          InputProps={{ sx: { color: 'white' } }}
+          value={remark}
+          onChange={(e) => setRemark(e.target.value)}
+        />
+
+
+
         <Button variant="contained" color="primary" type="submit" style={{ marginTop: '20px' }}>
           Submit
         </Button>
