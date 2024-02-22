@@ -78,9 +78,9 @@ const IssueForm = () => {
             sx={{ color: 'white' }}
           >
             <MenuItem value="">Select</MenuItem>
-            <MenuItem value="open">Open</MenuItem>
+            <MenuItem value="open">Completed</MenuItem>
             <MenuItem value="inProgress">In Progress</MenuItem>
-            <MenuItem value="closed">Closed</MenuItem>
+            <MenuItem value="closed">Pending</MenuItem>
           </Select>
         </FormControl>
         <TextField

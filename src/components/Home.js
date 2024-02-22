@@ -39,6 +39,13 @@ const columns = [
     headerAlign: 'center',
     align: 'center',
   },
+  {
+    field: 'remark',
+    headerName: 'Remark',
+    width: 200,
+    headerAlign: 'center',
+    align: 'center',
+  },
 ];
 
 function HomePage() {
@@ -47,9 +54,9 @@ function HomePage() {
 
   useEffect(() => {
     const jsonData = [
-      { id: 1, description: 'Broken pipe', location: 'Street A', status: 'Pending', type: 'Water' },
-      { id: 2, description: 'Overflowing sewage', location: 'Street B', status: 'In Progress', type: 'Sanitation' },
-      { id: 3, description: 'Water contamination', location: 'Street C', status: 'Completed', type: 'Water' },
+      { id: 1, description: 'Broken pipe', location: 'Street A', status: 'Pending', type: 'Water', remark: 'Needs urgent repair' },
+      { id: 2, description: 'Overflowing sewage', location: 'Street B', status: 'In Progress', type: 'Sanitation', remark: 'Scheduled for cleanup' },
+      { id: 3, description: 'Water contamination', location: 'Street C', status: 'Completed', type: 'Water', remark: 'Issue resolved' },
     ];
     setRows(jsonData);
   }, []);
