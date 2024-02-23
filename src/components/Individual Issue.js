@@ -34,6 +34,9 @@ const IssueForm = () => {
           value={issueName}
           onChange={(e) => setIssueName(e.target.value)}
           disabled
+          InputLabelProps={{ sx: { color: 'white' } }}
+          InputProps={{ sx: { color: 'white' } }}
+          sx={{ '& .MuiOutlinedInput-root': { '& fieldset': { borderColor: 'white' } } }}
         />
         <TextField
           label="Issue Description"
@@ -45,6 +48,9 @@ const IssueForm = () => {
           value={issueDescription}
           onChange={(e) => setIssueDescription(e.target.value)}
           disabled
+          InputLabelProps={{ sx: { color: 'white' } }}
+          InputProps={{ sx: { color: 'white' } }}
+          sx={{ '& .MuiOutlinedInput-root': { '& fieldset': { borderColor: 'white' } } }}
         />
         <TextField
           label="Location"
@@ -54,15 +60,19 @@ const IssueForm = () => {
           value={location}
           onChange={(e) => setLocation(e.target.value)}
           disabled
+          InputLabelProps={{ sx: { color: 'white' } }}
+          InputProps={{ sx: { color: 'white' } }}
+          sx={{ '& .MuiOutlinedInput-root': { '& fieldset': { borderColor: 'white' } } }}
         />
         <FormControl variant="outlined" fullWidth margin="normal">
-          <InputLabel sx={{ color: 'black' }}>Water or Sanitation</InputLabel>
+          <InputLabel sx={{ color: 'white' }}>Water or Sanitation</InputLabel>
           <Select
             value={waterOrSanitation}
             onChange={(e) => setWaterOrSanitation(e.target.value)}
             label="Water or Sanitation"
             sx={{ color: 'white' }}
             disabled
+            inputProps={{ sx: { color: 'white' } }}
           >
             <MenuItem value="">Select</MenuItem>
             <MenuItem value="water">Water</MenuItem>
@@ -76,6 +86,7 @@ const IssueForm = () => {
             onChange={(e) => setStatus(e.target.value)}
             label="Status"
             sx={{ color: 'white' }}
+            inputProps={{ sx: { color: 'white' } }}
           >
             <MenuItem value="">Select</MenuItem>
             <MenuItem value="open">Completed</MenuItem>
@@ -93,10 +104,8 @@ const IssueForm = () => {
           InputProps={{ sx: { color: 'white' } }}
           value={remark}
           onChange={(e) => setRemark(e.target.value)}
+          sx={{ '& .MuiOutlinedInput-root': { '& fieldset': { borderColor: 'white' } } }}
         />
-
-
-
         <Button variant="contained" color="primary" type="submit" style={{ marginTop: '20px' }}>
           Submit
         </Button>
